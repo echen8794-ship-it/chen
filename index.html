@@ -1,0 +1,44 @@
+<html lang="no">
+<head>
+<meta charset="UTF-8" />
+<title>Id og Class – Enkel Demo</title>
+<style>
+#tekst { font-size: 20px; color: black; }
+.melding { color: blue; }
+</style>
+</head>
+<body>
+
+
+<h2 id="tekst">Dette er original tekst.</h2>
+<p class="melding">Melding 1</p>
+<p class="melding">Melding 2</p>
+
+
+<button onclick="endreTekst()" style="background-color: #36c9c2; color: white;">Endre tekst</button>
+<button onclick="endreFarge()" style="background-color: #4dabf7; color: white;">Endre farge</button>
+<button onclick="endreAlleMeldinger()" style="background-color: #51cf66; color: white;">Endre class-elementer</button>
+
+
+<script>
+function endreTekst() {
+document.getElementById('tekst').innerText = 'hei hvordan går det !';
+}
+
+
+function endreFarge() {
+document.getElementById('tekst').style.color = 'red';
+}
+
+
+function endreAlleMeldinger() {
+const meldinger = document.getElementsByClassName('melding');
+for (let i = 0; i < meldinger.length; i++) {
+meldinger[i].innerText = 'Endret melding ' + (i + 1);
+}
+}
+</script>
+
+
+</body>
+</html>
